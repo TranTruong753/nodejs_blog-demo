@@ -3,8 +3,9 @@ import morgan from 'morgan';
 import { engine  } from 'express-handlebars';
 import path from 'path';
 import { fileURLToPath } from "url";
+import route from './routes/index.js';
 
-// const express = require('express')
+// const route = require('./routes')
 // const morgan = require('morgan')
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 console.log("PATH",__dirname);
@@ -27,21 +28,9 @@ app.set("views", path.resolve(__dirname, "./resources/views"));
 // morgen hiện get post
 app.use(morgan('dev'))
 
-app.get('/', (req, res) => {
-  res.render("home",{
-    title: "HOME",
-    mess: "hello world",
-  });
-})
+route(app);
 
 
-app.get('/search', (req, res) => {
-  
-  console.log(req.query.q);
-  res.render("search",{
-    query:req.query.q,
-  });
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
