@@ -4,7 +4,10 @@ import { engine  } from 'express-handlebars';
 import path from 'path';
 import { fileURLToPath } from "url";
 import route from './routes/index.js';
+import db from './config/db/index.js';
 
+
+db.connect();
 // const route = require('./routes')
 // const morgan = require('morgan')
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -33,5 +36,5 @@ route(app);
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`App listening on port ${port}`)
 })

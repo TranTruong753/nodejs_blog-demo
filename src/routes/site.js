@@ -3,6 +3,6 @@ import siteController from '../app/controllers/siteController.js';
 
 const router = express.Router();
 
-router.use('/', siteController.index )
+router.get('/', siteController.index )
 
 export default router

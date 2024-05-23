@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
-    "watch":"sass src/resources/scss:src/public/css -w",
+    "watch": "sass src/resources/scss:src/public/css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +27,8 @@
   "homepage": "https://github.com/TranTruong753/nodejs_blog-demo#readme",
   "dependencies": {
     "express": "^4.19.2",
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.4.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
